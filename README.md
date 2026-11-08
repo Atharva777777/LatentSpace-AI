@@ -1,3 +1,15 @@
+---
+title: Latentspace AI - Multimodal Intelligence Explorer
+emoji: 🌌
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: "1.30.0"
+app_file: app.py
+pinned: false
+license: apache-2.0
+---
+
 # LATENTSPACE AI: Multimodal Intelligence Explorer
 
 > **Generative AI CA Mini Project &bull; Problem Statement P6**  

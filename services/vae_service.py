@@ -150,7 +150,7 @@ class VAEService:
         train_dataset = datasets.FashionMNIST(
             root=str(self.DATA_DIR),
             train=True,
-            download=False,
+            download=True,
             transform=transform,
         )
 
@@ -213,7 +213,7 @@ class VAEService:
         test_dataset = datasets.FashionMNIST(
             root=str(self.DATA_DIR),
             train=False,
-            download=False,
+            download=True,
             transform=transform,
         )
 

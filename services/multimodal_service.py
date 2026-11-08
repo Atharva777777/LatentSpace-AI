@@ -28,9 +28,14 @@ class MultimodalService:
         """Lazy loads the CLIP model, preferring local files if available."""
         if self._clip_model is None:
             if self.LOCAL_CLIP_DIR.exists():
-                self._clip_model = SentenceTransformer(
-                    str(self.LOCAL_CLIP_DIR), device=self.device, local_files_only=True
-                )
+                try:
+                    self._clip_model = SentenceTransformer(
+                        str(self.LOCAL_CLIP_DIR), device=self.device, local_files_only=True
+                    )
+                except Exception:
+                    self._clip_model = SentenceTransformer(
+                        self.CLIP_MODEL_NAME, device=self.device
+                    )
             else:
                 self._clip_model = SentenceTransformer(
                     self.CLIP_MODEL_NAME, device=self.device

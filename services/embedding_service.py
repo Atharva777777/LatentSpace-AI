@@ -38,17 +38,22 @@ class EmbeddingService:
     def model(self) -> SentenceTransformer:
         """Lazy loader for the SentenceTransformer model."""
         if self._model is None:
-            # If path exists locally, load strictly from local files
-            is_local = os.path.exists(self.model_name)
-            if is_local:
-                self._model = SentenceTransformer(
-                    self.model_name,
-                    device=self.device,
-                    local_files_only=True,
-                )
+            # If path exists locally, attempt to load locally, falling back to HF Hub
+            if os.path.exists(self.model_name):
+                try:
+                    self._model = SentenceTransformer(
+                        self.model_name,
+                        device=self.device,
+                        local_files_only=True,
+                    )
+                except Exception:
+                    self._model = SentenceTransformer(
+                        self.DEFAULT_MODEL_NAME,
+                        device=self.device,
+                    )
             else:
                 self._model = SentenceTransformer(
-                    self.model_name,
+                    self.DEFAULT_MODEL_NAME,
                     device=self.device,
                 )
         return self._model

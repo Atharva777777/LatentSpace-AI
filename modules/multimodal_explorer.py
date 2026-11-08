@@ -42,7 +42,7 @@ def load_sample_images_and_texts() -> Tuple[List[Image.Image], List[str], List[s
     """Loads representative test images from Fashion-MNIST and matched text prompts."""
     data_dir = Path(__file__).resolve().parent.parent / "data" / "fashion_mnist"
     transform = transforms.ToTensor()
-    test_dataset = datasets.FashionMNIST(root=str(data_dir), train=False, download=False, transform=transform)
+    test_dataset = datasets.FashionMNIST(root=str(data_dir), train=False, download=True, transform=transform)
 
     # Find one representative image per class (0-9)
     found_images: Dict[int, Image.Image] = {}

@@ -40,7 +40,7 @@ def compute_dataset_latent_projections(
     transform = transforms.ToTensor()
     data_dir = Path(__file__).resolve().parent.parent / "data" / "fashion_mnist"
     test_dataset = datasets.FashionMNIST(
-        root=str(data_dir), train=False, download=False, transform=transform
+        root=str(data_dir), train=False, download=True, transform=transform
     )
 
     indices = list(range(min(num_samples, len(test_dataset))))
