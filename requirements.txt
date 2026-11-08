@@ -1,0 +1,21 @@
+# Core application framework
+streamlit>=1.30.0
+
+# Natural Language Processing & Embeddings
+sentence-transformers>=2.2.0
+torch>=2.0.0
+
+# Dimensionality Reduction & Machine Learning
+scikit-learn>=1.3.0
+umap-learn>=0.5.4
+
+# Data Processing & Analysis
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Data Visualisation
+plotly>=5.18.0
+
+# Testing
+pytest>=7.4.0
+

@@ -1,0 +1,40 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large model binaries
+models/all-MiniLM-L6-v2/
+models/clip-ViT-B-32/
+*.safetensors
+*.bin
+
+# Track lightweight VAE checkpoint (1.6 MB)
+!models/fashion_mnist_vae.pt
+
+# Streamlit config / cache
+.streamlit/
+
+# Raw dataset downloads
+data/fashion_mnist/
+
